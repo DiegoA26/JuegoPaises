@@ -1,0 +1,48 @@
+<head>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<header>
+<nav class="navbar bg-dark navbar-dark">
+    <div class="container-fluid">
+
+        <!-- Botón hamburguesa -->
+        <button class="btn btn-outline-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral">
+            ☰
+        </button>
+
+        <!-- Título centrado -->
+        <span class="navbar-brand mx-auto"  id="tituloHeader">GeoJuegos</span>
+
+        <!-- Botón login -->
+        <button class="btn btn-outline-light">
+            Iniciar sesión
+        </button>
+
+    </div>
+</nav>
+</header>
+
+<!-- PANEL LATERAL -->
+<div class="offcanvas offcanvas-start bg-dark text-white" tabindex="-1" id="menuLateral">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title">Juegos</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+    </div>
+
+    <div class="offcanvas-body">
+        <ul class="list-unstyled">
+            <li><a href="#" class="text-white text-decoration-none">Adivinar bandera</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Capitales</a></li>
+            <li><a href="#" class="text-white text-decoration-none">País por mapa</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>

@@ -1,0 +1,49 @@
+body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #e3f2fd, #ffffff);
+            min-height: 100vh;
+        }
+
+        #pestaña-puntuacion {
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-juego {
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transition: transform 0.2s ease;
+        }
+
+        .card-juego:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-juego img {
+            max-width: 100%;
+            height: 150px;
+            object-fit: contain;
+            margin: 10px 0;
+        }
+
+        .btn-custom {
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .btn-custom:hover {
+            transform: scale(1.05);
+        }
+
+        .contenedor-tarjetas {
+            max-width: 900px;
+        }
+
+        @media (max-width: 768px) {
+            .card-juego {
+                margin-bottom: 20px;
+            }
+        }
