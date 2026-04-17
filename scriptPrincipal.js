@@ -2,9 +2,14 @@
 //Cargar en la tarjeta 2 los dotos de
 
 const textoPuntuacion = document.getElementById("contador-puntuacion");
+const textoPerder = document.getElementById("texto-pantalla-final");
+
+let modalPerder;
+
 
 const tarjeta1 = document.getElementById("tarjeta-1");
 const tarjeta2 = document.getElementById("tarjeta-2");
+const btnReiniciar = document.getElementById("btn-reiniciar");
 
 const btnMas = document.getElementById("btn-mas");
 const btnMenos = document.getElementById("btn-menos");
@@ -98,6 +103,7 @@ function botonMas() {
     } else {
         //Si perdio
         console.log("Perdio");
+        perderPartida();
     }
 }
 function botonMenos() {
@@ -108,6 +114,7 @@ function botonMenos() {
     } else {
         //Si perdio
         console.log("Perdio");
+        perderPartida();
     }
 }
 
@@ -117,7 +124,25 @@ function compararTarjetas() {
     return listaPaises[contadorPais - 2].poblacion > listaPaises[contadorPais - 1].poblacion;
 }
 
+function perderPartida(){
+    btnMas.disabled = true;
+    btnMenos.disabled = true;
+
+    textoPerder.textContent = "Has conseguido una puntuacion de " + contadorPuntuacion;
+    modalPerder.show();
+}
+
 btnMas.addEventListener("click", () => botonMas());
 btnMenos.addEventListener("click", () => botonMenos());
+btnReiniciar.addEventListener("click", () => {window.location.reload();})
+
+document.addEventListener('DOMContentLoaded', function() {
+    // 1. Selecciona el elemento modal
+    const modalElement = document.getElementById("modal-perder");
+    
+    // 2. Inicializa y muestra el modal
+    modalPerder = new bootstrap.Modal(modalElement);
+});
+
 
 iniciarJuego();
