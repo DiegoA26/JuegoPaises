@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS v5.3.8 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+
+
+    <style>
+        .contenedor-tarjetas {
+            height: 80rem;
+        }
+    </style>
+
+</head>
+
+<body class=" d-flex  flex-column align-items-center">
+    <header class="container text-center bg-primary p-4 mt-3 d-flex row">
+        <h1 class="col-6">Juego de paises</h1>
+        <h1 class="col-6" id="contador-puntuacion">Puntuacion: 0</h1>
+    </header>
+    <main class="container-fluid d-flex row mt-4 contenedor-tarjetas">
+        <div class="container bg-primary col-6 h-50 text-center" id="tarjeta-1">
+            <h1>Nombre Pais</h1>
+            <img src="#" alt="" class="img">
+            <h2>Poblacion: XXXX</h2>
+        </div>
+        <div class="container bg-secondary col-6 h-50 text-center" id="tarjeta-2">
+            <h1>Nombre Pais</h1>
+            <img src="#" alt="" class="img">
+            <div>
+                <button type="button" id="btn-mas">Mas</button>
+                <button type="button" id="btn-menos">Menos</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <!-- place footer here -->
+    </footer>
+    <!-- Bootstrap JavaScript Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <script type="module" src="scriptPrincipal.js"></script>
+</body>
+
+</html>
