@@ -29,9 +29,9 @@ async function iniciarJuego() {
 }
 
 function cargarInformacionTarjeta1() {
-    const nombrePais = tarjeta1.querySelector("h1");
+    const nombrePais = tarjeta1.querySelector(".nombre-pais");
     const imagenBandera = tarjeta1.querySelector("img");
-    const poblacion = tarjeta1.querySelector("h2");
+    const poblacion = tarjeta1.querySelector(".poblacion");
 
     const objetoPais = listaPaises[contadorPais - 2];
     nombrePais.textContent = objetoPais.nombre;
@@ -41,7 +41,7 @@ function cargarInformacionTarjeta1() {
 }
 
 function cargarInformacionTarjeta2() {
-    const nombrePais = tarjeta2.querySelector("h1");
+    const nombrePais = tarjeta2.querySelector(".nombre-pais");
     const imagenBandera = tarjeta2.querySelector("img");
 
     const objetoPais = listaPaises[contadorPais - 1];
@@ -128,7 +128,11 @@ function perderPartida(){
     btnMas.disabled = true;
     btnMenos.disabled = true;
 
-    textoPerder.textContent = "Has conseguido una puntuacion de " + contadorPuntuacion;
+    const objetoPais2 = listaPaises[contadorPais-1];
+ 
+    textoPerder.innerHTML = `${objetoPais2.nombre} tiene una poblacion de ${objetoPais2.poblacion.toLocaleString("es-ES")} personas <br>
+Has conseguido ${contadorPuntuacion} puntos!`;
+    
     modalPerder.show();
 }
 
