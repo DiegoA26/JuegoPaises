@@ -1,3 +1,5 @@
+const textoPerder = document.getElementById("texto-pantalla-final");
+const btnReiniciar = document.getElementById("btn-reiniciar");
 const imagenBandera = document.getElementById("imagen-bandera");
 
 const inputBuscador = document.getElementById("buscador");
@@ -8,6 +10,9 @@ const btnBuscar = document.getElementById("btn-buscar");
 let listaPaises = [];
 let contadorPais = 0;
 
+let modalPerder;
+
+let contadorVidas = 3;
 let contadorPuntuacion = 0;
 
 async function inicio() {
@@ -59,35 +64,46 @@ function desordenarLista(array) {
     return array;
 }
 
-
-btnBuscar.addEventListener("click", ()=>{
+btnBuscar.addEventListener("click", () => {
     const paisCorrecto = listaPaises[contadorPais].nombre;
-    
 
-    if(paisCorrecto == inputBuscador.value){
+    if (paisCorrecto == inputBuscador.value) {
         adivinarIntento();
-    }
-    else{
+    } else {
         fallarIntento();
     }
 
     inputBuscador.value = "";
+});
 
-})
-
-function adivinarIntento(){
+function adivinarIntento() {
     console.log("adivinado");
     contadorPuntuacion++;
     contadorPais++;
+    document.getElementById("contador-puntuacion").textContent =
+        `Puntuación: ${contadorPuntuacion}`;
     cargarPais();
 }
 
-function fallarIntento(){
+function fallarIntento() {
     console.log("fallar");
+    contadorVidas--;
+
+    if (contadorVidas > 0) {
+        document.getElementById("contador-vidas").textContent =
+            `Vidas: ${contadorVidas}/3`; 
+    }
+    else{
+        textoPerder.textContent = `Has conseguido una puntuación de ${contadorPuntuacion}, el país era ${listaPaises[contadorPais].nombre}`;
+        modalPerder.show();
+    }
 }
 
 inputBuscador.addEventListener("input", function () {
-    const valor = this.value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+    const valor = this.value
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
 
     // Limpiar lista
     listaBuscador.innerHTML = "";
@@ -96,7 +112,11 @@ inputBuscador.addEventListener("input", function () {
 
     // Filtrar países
     const resultados = listaPaises.filter((pais) =>
-        pais.nombre.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "").includes(valor)
+        pais.nombre
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .includes(valor),
     );
 
     // Limitar resultados
@@ -116,5 +136,14 @@ inputBuscador.addEventListener("input", function () {
         listaBuscador.appendChild(item);
     });
 });
+btnReiniciar.addEventListener("click", () => {window.location.reload();})
+document.addEventListener('DOMContentLoaded', function() {
+    // 1. Selecciona el elemento modal
+    const modalElement = document.getElementById("modal-perder");
+    
+    // 2. Inicializa y muestra el modal
+    modalPerder = new bootstrap.Modal(modalElement);
+});
+
 
 inicio();
