@@ -6,7 +6,6 @@ const textoPerder = document.getElementById("texto-pantalla-final");
 
 let modalPerder;
 
-
 const tarjeta1 = document.getElementById("tarjeta-1");
 const tarjeta2 = document.getElementById("tarjeta-2");
 const btnReiniciar = document.getElementById("btn-reiniciar");

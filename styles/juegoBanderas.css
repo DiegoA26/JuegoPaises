@@ -1,0 +1,72 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #e3f2fd, #ffffff);
+    min-height: 100vh;
+}
+
+/* CONTENEDOR BANDERA */
+#contenedor-bandera {
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+#pestaña-puntuacion {
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* TARJETA PRINCIPAL */
+.card-juego {
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease;
+}
+
+.card-juego:hover {
+    transform: translateY(-5px);
+}
+
+/* IMAGEN */
+#imagen-bandera {
+    max-width: 100%;
+    height: 180px;
+    object-fit: contain;
+    margin-top: 10px;
+}
+
+/* BOTÓN */
+.btn-custom {
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.btn-custom:hover {
+    transform: scale(1.05);
+}
+
+/* CONTENEDOR */
+.contenedor-tarjetas {
+    max-width: 700px;
+}
+
+/* LISTA */
+.list-group-item {
+    border-radius: 10px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.list-group-item:hover {
+    background-color: #f1f1f1;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .card-juego {
+        margin-bottom: 20px;
+    }
+}
